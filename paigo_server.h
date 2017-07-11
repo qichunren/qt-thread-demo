@@ -15,7 +15,7 @@ signals:
     void message(int event_id);
 
 public slots:
-    void onPostMessage(int event_id);
+    void whenPostMessage(int event_id);
 
 
 

@@ -4,7 +4,7 @@
 
 PaigoServerNoBlocking::PaigoServerNoBlocking(QObject *parent) : QObject(parent), _thread(new QThread(0))
 {
-    connect(this, SIGNAL(message(int)), this, SLOT(onPostMessage(int)));
+    connect(this, SIGNAL(message(int)), this, SLOT(whenPostMessage(int)));
 }
 
 void PaigoServerNoBlocking::post(int ev)
@@ -12,7 +12,7 @@ void PaigoServerNoBlocking::post(int ev)
     emit message(ev);
 }
 
-void PaigoServerNoBlocking::onPostMessage(int i)
+void PaigoServerNoBlocking::whenPostMessage(int i)
 {
     qDebug() << "Event" << i;
     if(i == 1)

@@ -4,7 +4,7 @@
 
 PaigoServer::PaigoServer(QObject *parent) : QObject(parent)
 {
-    connect(this, SIGNAL(message(int)), this, SLOT(onPostMessage(int)));
+    connect(this, SIGNAL(message(int)), this, SLOT(whenPostMessage(int)));
 }
 
 
@@ -13,7 +13,7 @@ void PaigoServer::post(int ev)
     emit message(ev);
 }
 
-void PaigoServer::onPostMessage(int i)
+void PaigoServer::whenPostMessage(int i)
 {
     qDebug() << "Event" << i;
     if(i == 1)

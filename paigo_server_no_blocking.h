@@ -18,7 +18,7 @@ signals:
     void task_finished();
 
 public slots:
-    void onPostMessage(int event_id);
+    void whenPostMessage(int event_id);
 
 private:
     QThread * _thread;
